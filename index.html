@@ -69,21 +69,21 @@
     </form>
 
     <section id="error-btns">
-      <button>Console Log</button>
-      <button>Console Error</button>
-      <button>Console Count</button>
-      <button>Console Warn</button>
-      <button>Console Assert</button>
-      <button>Console Clear</button>
-      <button>Console Dir</button>
-      <button>Console dirxml</button>
-      <button>Console Group Start</button>
-      <button>Console Group End</button>
-      <button>Console Table</button>
-      <button>Start Timer</button>
-      <button>End Timer</button>
-      <button>Console Trace</button>
-      <button>Trigger a Global Error</button>
+      <button id="log" onClick="consoleFunction(this.id)">Console Log</button>
+      <button id="error" onClick="consoleFunction(this.id)">Console Error</button>
+      <button id="count" onClick="consoleFunction(this.id)">Console Count</button>
+      <button id="warn" onClick="consoleFunction(this.id)">Console Warn</button>
+      <button id="assert" onClick="consoleFunction(this.id)">Console Assert</button>
+      <button id="clear" onClick="consoleFunction(this.id)">Console Clear</button>
+      <button id="dir" onClick="consoleFunction(this.id)">Console Dir</button>
+      <button id="dirxml" onClick="consoleFunction(this.id)">Console dirxml</button>
+      <button id="consoleGroupStart" onClick="consoleFunction(this.id)">Console Group Start</button>
+      <button id="consoleGroupEnd" onClick="consoleFunction(this.id)">Console Group End</button>
+      <button id="consoleTable" onClick="consoleFunction(this.id)">Console Table</button>
+      <button id="startTimer" onClick="consoleFunction(this.id)">Start Timer</button>
+      <button id="endTimer" onClick="consoleFunction(this.id)">End Timer</button>
+      <button id="consoleTrace" onClick="consoleFunction(this.id)">Console Trace</button>
+      <button id="triggerGlobalError" onClick="consoleFunction(this.id)">Trigger a Global Error</button>
     </section>
   </main>
 
@@ -99,6 +99,83 @@
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
+    
+    function consoleFunction(clicked) {
+      
+      const label = 'Adolescent Irradiated Espionage Tortoises';
+      
+      var people = [
+       {
+        first: 'René',
+        last: 'Magritte',
+       },
+      ];
+      
+      if(clicked == 'log') {
+        console.log('log');
+      }
+      if(clicked == 'error') {
+        console.error('error');
+      }
+      if(clicked == 'count') {
+        console.count();
+      }
+      if(clicked == 'warn') {
+        console.warn('warn');
+      }
+      if(clicked == 'assert') {
+        x = 5;
+        y = 3;
+        const reason = 'x is expected to be less than y';
+        console.assert(x < y, {x, y, reason});
+      }
+      if(clicked == 'clear') {
+        console.clear();
+      }
+      if(clicked == 'dir') {
+        console.dir(document.head);
+      }
+      if(clicked == 'dirxml') {
+        console.dirxml(document);
+      }
+      if(clicked == 'dirxml') {
+        console.dirxml(document);
+      }
+      if(clicked == 'consoleGroupStart') {
+        console.group(label);
+      }
+      if(clicked == 'consoleGroupEnd') {
+        console.groupEnd(label);
+      }
+      if(clicked == 'consoleGroupTable') {
+        console.table(people);
+      }
+      if(clicked == 'startTimer') {
+        console.time();
+      }
+      if(clicked == 'endTimer') {
+        console.timeEnd();
+      }
+      if(clicked == 'consoleTrace') {
+        console.trace();
+      }
+      if(clicked == 'triggerGlobalError') {
+        throw new Error("Fail");
+      }
+    }
+    
+    
+    try {
+      invalidVariable;
+    } catch (err) {
+      alert("Error");
+    }
+    
+    try {
+      var noComma = 10
+    } catch (err) {
+      alert("Error");
+    }
 
     // Start your code here
     // You may move this JS to another file if you wish
